@@ -1,6 +1,10 @@
 vim.lsp.enable({
 	"lua",
-	"csharp"
+	"csharp",
+    "typescript",
+    "css",
+    "php",
+    "sql"
 })
 
 vim.diagnostic.config({
