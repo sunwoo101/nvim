@@ -4,7 +4,8 @@ vim.lsp.enable({
     "typescript",
     "css",
     "php",
-    "sql"
+    "sql",
+    "python"
 })
 
 vim.diagnostic.config({
