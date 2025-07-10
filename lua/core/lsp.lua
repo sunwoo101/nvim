@@ -6,7 +6,8 @@ vim.lsp.enable({
     "php",
     "sql",
     "python",
-    "go"
+    "go",
+    "cpp"
 })
 
 vim.diagnostic.config({

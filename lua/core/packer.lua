@@ -23,11 +23,10 @@ return require('packer').startup(function(use)
     use({
         "saghen/blink.cmp",
         requires = {
-            "rafamadriz/friendly-snippets",
-            "Saghen/frizbee"
+            "rafamadriz/friendly-snippets"
         },
         -- If you prefer to build from source:
-        -- run = "cargo build --release",
+        run = "cargo build --release",
         config = function()
             require("blink.cmp").setup({
                 keymap = { preset = "super-tab" },
