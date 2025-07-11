@@ -80,7 +80,7 @@ _G.packer_plugins = {
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["blink.cmp"] = {
-    config = { "\27LJ\2\n‰\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\2\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\15completion\0\vkeymap\0\15appearance\0\nfuzzy\0\fsources\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0" },
+    config = { "\27LJ\2\n‰\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\2\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\15appearance\0\15completion\0\nfuzzy\0\vkeymap\0\fsources\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0" },
     loaded = true,
     path = "/home/user/.local/share/nvim/site/pack/packer/start/blink.cmp",
     url = "https://github.com/saghen/blink.cmp"
@@ -152,14 +152,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: blink.cmp
+time([[Config for blink.cmp]], true)
+try_loadstring("\27LJ\2\n‰\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\2\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\15appearance\0\15completion\0\nfuzzy\0\vkeymap\0\fsources\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
+time([[Config for blink.cmp]], false)
 -- Config for: poimandres.nvim
 time([[Config for poimandres.nvim]], true)
 try_loadstring("\27LJ\2\n<\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\15poimandres\frequire\0", "config", "poimandres.nvim")
 time([[Config for poimandres.nvim]], false)
--- Config for: blink.cmp
-time([[Config for blink.cmp]], true)
-try_loadstring("\27LJ\2\n‰\3\0\0\5\0\18\0\0216\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\r\0005\4\f\0=\4\14\3=\3\15\0025\3\16\0=\3\17\2B\0\2\1K\0\1\0\nfuzzy\1\0\1\19implementation\29prefer_rust_with_warning\fsources\fdefault\1\0\1\fdefault\0\1\5\0\0\blsp\tpath\rsnippets\vbuffer\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\2\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\5\15completion\0\vkeymap\0\15appearance\0\nfuzzy\0\fsources\0\1\0\1\vpreset\14super-tab\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
-time([[Config for blink.cmp]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-cmp ]]

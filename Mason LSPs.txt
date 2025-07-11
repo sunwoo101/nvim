@@ -1,5 +1,5 @@
 clangd
-csharp-language-server
+omnisharp
 css-lsp
 gopls
 lua-language-server
