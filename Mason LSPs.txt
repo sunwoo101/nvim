@@ -1,9 +1,0 @@
-clangd
-omnisharp
-css-lsp
-gopls
-lua-language-server
-phpactor
-pyright
-sqlls
-typescript-language-server

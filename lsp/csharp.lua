@@ -22,7 +22,7 @@ return {
     '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
     '--hostPID',
     tostring(vim.fn.getpid()),
-    'DotNet:enablePackageRestore=false',
+    'DotNet:enablePackageRestore=true',
     '--encoding',
     'utf-8',
     '--languageserver',
@@ -50,7 +50,7 @@ return {
       EnableEditorConfigSupport = true,
       -- Specifies whether 'using' directives should be grouped and sorted during
       -- document formatting.
-      OrganizeImports = nil,
+      OrganizeImports = false, -- nil
     },
     MsBuild = {
       -- If true, MSBuild project system will only load projects for files that
@@ -59,28 +59,28 @@ return {
       -- for projects that are relevant to code that is being edited. With this
       -- setting enabled OmniSharp may load fewer projects and may thus display
       -- incomplete reference lists for symbols.
-      LoadProjectsOnDemand = nil,
+      LoadProjectsOnDemand = false, -- nil
     },
     RoslynExtensionsOptions = {
       -- Enables support for roslyn analyzers, code fixes and rulesets.
-      EnableAnalyzersSupport = nil,
+      EnableAnalyzersSupport = true, -- nil
       -- Enables support for showing unimported types and unimported extension
       -- methods in completion lists. When committed, the appropriate using
       -- directive will be added at the top of the current file. This option can
       -- have a negative impact on initial completion responsiveness,
       -- particularly for the first few completion sessions after opening a
       -- solution.
-      EnableImportCompletion = nil,
+      EnableImportCompletion = true, -- nil
       -- Only run analyzers against open files when 'enableRoslynAnalyzers' is
       -- true
-      AnalyzeOpenDocumentsOnly = nil,
+      AnalyzeOpenDocumentsOnly = false, -- nil
       -- Enables the possibility to see the code in external nuget dependencies
-      EnableDecompilationSupport = nil,
+      EnableDecompilationSupport = true, -- nil
     },
     RenameOptions = {
-      RenameInComments = nil,
-      RenameOverloads = nil,
-      RenameInStrings = nil,
+      RenameInComments = false, -- nil
+      RenameOverloads = false, -- nil
+      RenameInStrings = false, -- nil
     },
     Sdk = {
       -- Specifies whether to include preview versions of the .NET SDK when

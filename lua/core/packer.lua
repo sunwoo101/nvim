@@ -1,11 +1,11 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+    use('wbthomason/packer.nvim')
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     use {
@@ -16,9 +16,17 @@ return require('packer').startup(function(use)
         end
     }
 
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    use('shaunsingh/nord.nvim')
+
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('theprimeagen/harpoon')
     use('mason-org/mason.nvim')
+    use('mason-org/mason-lspconfig.nvim')
     use('neovim/nvim-lspconfig')
     use({
         "saghen/blink.cmp",
@@ -29,12 +37,21 @@ return require('packer').startup(function(use)
         run = "cargo build --release",
         config = function()
             require("blink.cmp").setup({
-                keymap = { preset = "super-tab" },
+                keymap = {
+                    preset = "super-tab",
+                    ['<C-j>'] = { 'select_next', 'fallback' },
+                    ['<C-k>'] = { 'select_prev', 'fallback' }
+                },
                 appearance = {
                     nerd_font_variant = "mono",
                 },
                 completion = {
-                    documentation = { auto_show = true },
+                    documentation = { auto_show = true, },
+                    menu = { auto_show = true },
+                    ghost_text = { enabled = true, show_with_menu = true },
+                },
+                signature = {
+                    enabled = true,
                 },
                 sources = {
                     default = { "lsp", "path", "snippets", "buffer" },
@@ -46,7 +63,7 @@ return require('packer').startup(function(use)
         end,
     })
     use({
-        "hrsh7th/nvim-cmp", -- must come first
+        "hrsh7th/nvim-cmp",     -- must come first
         requires = {
             "L3MON4D3/LuaSnip", -- for snippet support
         }
