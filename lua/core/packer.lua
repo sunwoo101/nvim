@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
     use('mason-org/mason.nvim')
     use('mason-org/mason-lspconfig.nvim')
     use('neovim/nvim-lspconfig')
+    use('ray-x/lsp_signature.nvim')
     use({
         "saghen/blink.cmp",
         requires = {
@@ -49,9 +50,6 @@ return require('packer').startup(function(use)
                     documentation = { auto_show = true, },
                     menu = { auto_show = true },
                     ghost_text = { enabled = true, show_with_menu = true },
-                },
-                signature = {
-                    enabled = true,
                 },
                 sources = {
                     default = { "lsp", "path", "snippets", "buffer" },

@@ -7,7 +7,8 @@ vim.lsp.enable({
     "sql",
     "python",
     "go",
-    "cpp"
+    "cpp",
+    "tailwind"
 })
 
 vim.diagnostic.config({
