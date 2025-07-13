@@ -1,3 +1,16 @@
+vim.lsp.enable({
+	"lua",
+	"csharp",
+    "typescript",
+    "css",
+    "php",
+    "sql",
+    "python",
+    "go",
+    "cpp",
+    "tailwind"
+})
+
 vim.diagnostic.config({
 	virtual_lines = false,
 	virtual_text = true,
