@@ -47,6 +47,7 @@ return require('packer').startup(function(use)
                     nerd_font_variant = "mono",
                 },
                 completion = {
+                    trigger = { show_in_snippet = false },
                     documentation = { auto_show = true, },
                     menu = { auto_show = true },
                     ghost_text = { enabled = true, show_with_menu = true },
@@ -60,12 +61,20 @@ return require('packer').startup(function(use)
             })
         end,
     })
+
     use({
         "hrsh7th/nvim-cmp",     -- must come first
         requires = {
             "L3MON4D3/LuaSnip", -- for snippet support
         }
     })
+
+    use {
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    }
 
     use({
         "windwp/nvim-autopairs",
