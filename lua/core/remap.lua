@@ -22,3 +22,6 @@ vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 vim.keymap.set("i", "<C-M-BS>", "<C-o>d0", { noremap = true, silent = true })
 vim.keymap.set("i","<C-M-Del>", "<C-o>d$", { noremap = true, silent = true })
+
+vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
+vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
