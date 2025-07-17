@@ -25,3 +25,8 @@ vim.keymap.set("i","<C-M-Del>", "<C-o>d$", { noremap = true, silent = true })
 
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
+vim.keymap.set("i", "kj", "<Esc>", { noremap = false })
+
+vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic floag" })
+
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })

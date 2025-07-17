@@ -37,11 +37,13 @@ return require('packer').startup(function(use)
         -- If you prefer to build from source:
         run = "cargo build --release",
         config = function()
-            require("blink.cmp").setup({
+            local cmp = require("blink.cmp")
+            cmp.setup({
                 keymap = {
                     preset = "super-tab",
                     ['<C-j>'] = { 'select_next', 'fallback' },
-                    ['<C-k>'] = { 'select_prev', 'fallback' }
+                    ['<C-k>'] = { 'select_prev', 'fallback' },
+                    ['<Esc>'] = { 'hide', 'fallback' }
                 },
                 appearance = {
                     nerd_font_variant = "mono",
