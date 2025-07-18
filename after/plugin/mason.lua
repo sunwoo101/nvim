@@ -10,7 +10,8 @@ require('mason-lspconfig').setup({
         'pyright',
         'sqlls',
         'ts_ls',
-        'tailwindcss'
+        'tailwindcss',
+        'java_language_server'
     },
     handlers = {
         function(server_name)
