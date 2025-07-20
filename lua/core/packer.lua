@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
                 fuzzy = {
                     implementation = "prefer_rust_with_warning",
                 },
+                signature = { enabled = false },
             })
         end,
     })
