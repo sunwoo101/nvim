@@ -66,9 +66,12 @@ return require('packer').startup(function(use)
     })
 
     use({
-        "hrsh7th/nvim-cmp",     -- must come first
+        "hrsh7th/nvim-cmp",
         requires = {
-            "L3MON4D3/LuaSnip", -- for snippet support
+            {
+                "L3MON4D3/LuaSnip",
+                run = "make install_jsregexp"
+            }
         }
     })
 
