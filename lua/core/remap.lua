@@ -20,13 +20,15 @@ end, opts)
 
 vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
-vim.keymap.set("i", "<C-M-BS>", "<C-o>d0", { noremap = true, silent = true })
-vim.keymap.set("i","<C-M-Del>", "<C-o>d$", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-M-BS>", "<C-o>d0", opts)
+vim.keymap.set("i","<C-M-Del>", "<C-o>d$", opts)
 
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
 vim.keymap.set("i", "kj", "<Esc>", { noremap = false })
 
-vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic floag" })
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic floag" })
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })
+
+vim.keymap.set("v", "<leader>y", '"+y<Esc>', opts)
