@@ -8,27 +8,19 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use {
-        'olivercederborg/poimandres.nvim',
-        config = function()
-            require('poimandres').setup {
-            }
-        end
-    }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
-    use('shaunsingh/nord.nvim')
-
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('theprimeagen/harpoon')
     use('mason-org/mason.nvim')
     use('mason-org/mason-lspconfig.nvim')
     use('neovim/nvim-lspconfig')
-    use('ray-x/lsp_signature.nvim')
+    use('hrsh7th/cmp-nvim-lsp-signature-help')
     use({
         "saghen/blink.cmp",
         requires = {
