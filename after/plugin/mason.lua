@@ -11,7 +11,9 @@ require('mason-lspconfig').setup({
         'sqlls',
         'ts_ls',
         'tailwindcss',
-        'jdtls'
+        'jdtls',
+        'vue_ls',
+        'html'
     },
     handlers = {
         function(server_name)
