@@ -1,3 +1,12 @@
+local function macro_recording()
+    local reg = vim.fn.reg_recording()
+    if reg == '' then
+        return ''
+    else
+        return 'recording @' .. reg
+    end
+end
+
 require('lualine').setup {
     options = {
         icons_enabled = true,
@@ -28,16 +37,18 @@ require('lualine').setup {
                 'CursorMoved',
                 'CursorMovedI',
                 'ModeChanged',
+                'RecordingEnter',
+                'RecordingLeave',
             },
         }
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
+        lualine_b = { 'branch', 'diagnostics' },
+        lualine_c = { macro_recording },
         lualine_x = { 'lsp_status' },
-        lualine_y = {  },
-        lualine_z = { 'location' }
+        lualine_y = { 'filename' },
+        lualine_z = {},
     },
     inactive_sections = {
         lualine_a = {},
