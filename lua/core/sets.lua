@@ -30,5 +30,5 @@ vim.opt.fillchars:append({ eob = ' ' })
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
 vim.o.showmode = true
