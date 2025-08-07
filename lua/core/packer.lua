@@ -1,33 +1,33 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd([[packadd packer.nvim]])
 
-return require('packer').startup(function(use)
-    use('wbthomason/packer.nvim')
+return require("packer").startup(function(use)
+    use("wbthomason/packer.nvim")
 
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = { { "nvim-lua/plenary.nvim" } },
+    })
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use({ "catppuccin/nvim", as = "catppuccin" })
 
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    use({
+        "nvim-lualine/lualine.nvim",
+        requires = { "nvim-tree/nvim-web-devicons", opt = true },
+    })
 
-    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('theprimeagen/harpoon')
-    use('mason-org/mason.nvim')
-    use('mason-org/mason-lspconfig.nvim')
-    use('WhoIsSethDaniel/mason-tool-installer.nvim')
-    use('neovim/nvim-lspconfig')
-    use('stevearc/conform.nvim')
-    use('mfussenegger/nvim-lint')
-    use('hrsh7th/cmp-nvim-lsp-signature-help')
+    use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
+    use("theprimeagen/harpoon")
+    use("mason-org/mason.nvim")
+    use("mason-org/mason-lspconfig.nvim")
+    use("WhoIsSethDaniel/mason-tool-installer.nvim")
+    use("neovim/nvim-lspconfig")
+    use("stevearc/conform.nvim")
+    use("mfussenegger/nvim-lint")
+    use("hrsh7th/cmp-nvim-lsp-signature-help")
     use({
         "saghen/blink.cmp",
         requires = {
-            "rafamadriz/friendly-snippets"
+            "rafamadriz/friendly-snippets",
         },
         -- If you prefer to build from source:
         run = "cargo build --release",
@@ -36,9 +36,9 @@ return require('packer').startup(function(use)
             cmp.setup({
                 keymap = {
                     preset = "super-tab",
-                    ['<C-j>'] = { 'select_next', 'fallback' },
-                    ['<C-k>'] = { 'select_prev', 'fallback' },
-                    ['<Esc>'] = { 'hide', 'fallback' }
+                    ["<C-j>"] = { "select_next", "fallback" },
+                    ["<C-k>"] = { "select_prev", "fallback" },
+                    ["<Esc>"] = { "hide", "fallback" },
                 },
                 appearance = {
                     nerd_font_variant = "mono",
@@ -62,12 +62,12 @@ return require('packer').startup(function(use)
 
     use("hrsh7th/nvim-cmp")
 
-    use {
+    use({
         "windwp/nvim-ts-autotag",
         config = function()
             require("nvim-ts-autotag").setup()
         end,
-    }
+    })
 
     use({
         "windwp/nvim-autopairs",
@@ -88,6 +88,4 @@ return require('packer').startup(function(use)
             cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
     })
-
-    use('ThePrimeagen/vim-be-good');
 end)
