@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
     use('mason-org/mason-lspconfig.nvim')
     use('WhoIsSethDaniel/mason-tool-installer.nvim')
     use('neovim/nvim-lspconfig')
+    use('stevearc/conform.nvim')
+    use('mfussenegger/nvim-lint')
     use('hrsh7th/cmp-nvim-lsp-signature-help')
     use({
         "saghen/blink.cmp",
