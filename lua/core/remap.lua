@@ -23,12 +23,22 @@ vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 vim.keymap.set("i", "<C-M-BS>", "<C-o>d0", opts)
 vim.keymap.set("i","<C-M-Del>", "<C-o>d$", opts)
 
-vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
-vim.keymap.set("i", "kj", "<Esc>", { noremap = false })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic floag" })
 
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })
 
 vim.keymap.set("v", "<leader>y", '"+y<Esc>', opts)
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  pattern = "i:*",
+  callback = function()
+    vim.schedule(function()
+      if vim.snippet and vim.snippet.active() then
+        vim.snippet.stop()
+      end
+    end)
+  end,
+  desc = "Exit snippet mode on leaving insert mode",
+})
