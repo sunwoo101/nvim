@@ -1,5 +1,5 @@
 require("mason").setup();
-require('mason-lspconfig').setup({
+require('mason-tool-installer').setup {
     ensure_installed = {
         'clangd',
         'cssls',
@@ -13,11 +13,19 @@ require('mason-lspconfig').setup({
         'tailwindcss',
         'jdtls',
         'vue_ls',
-        'html'
+        'html',
+        'eslint',
+        'prettier',
+        'prettierd',
+        'black',
+        'pylint',
+        'stylua',
+        'phpcs',
+        'sqlfluff'
     },
-    handlers = {
-        function(server_name)
-            require('lspconfig')[server_name].setup({})
-        end,
-    }
-})
+    auto_update = true,
+    run_on_start = true,
+    integrations = {
+        ['mason-lspconfig'] = true,
+    },
+}

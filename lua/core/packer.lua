@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mason-org/mason.nvim')
     use('mason-org/mason-lspconfig.nvim')
+    use('WhoIsSethDaniel/mason-tool-installer.nvim')
     use('neovim/nvim-lspconfig')
     use('hrsh7th/cmp-nvim-lsp-signature-help')
     use({
