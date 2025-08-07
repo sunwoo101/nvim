@@ -1,4 +1,0 @@
-select entire block: in visual mode - v[ v{ v[ v}
-go to the start/end of the file: [[ and ]]
-replace things in ()''""{}[]: ci{ ci( ci' ci". closing brackets do the same thing. vi will select instead.
-replace text in the nearest (): cib
