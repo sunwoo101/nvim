@@ -88,4 +88,6 @@ return require("packer").startup(function(use)
             cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
     })
+
+    use('andweeb/presence.nvim')
 end)
