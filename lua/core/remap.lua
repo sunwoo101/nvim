@@ -3,6 +3,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
 vim.keymap.set("n", "<leader>h", vim.cmd.split)
+vim.keymap.set("n", "<leader>l", vim.cmd.vsplit)
+vim.keymap.set("n", "<leader>j", vim.cmd.split)
 
 local opts = { noremap = true, silent = true }
 
