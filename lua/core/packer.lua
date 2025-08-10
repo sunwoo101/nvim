@@ -24,6 +24,7 @@ return require("packer").startup(function(use)
     use("stevearc/conform.nvim")
     use("mfussenegger/nvim-lint")
     use("hrsh7th/cmp-nvim-lsp-signature-help")
+    use("Hoffs/omnisharp-extended-lsp.nvim")
     use({
         "saghen/blink.cmp",
         requires = {

@@ -48,3 +48,6 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     end,
     desc = "Exit snippet mode on leaving insert mode",
 })
+
+vim.keymap.set("n", "<F12>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
+vim.keymap.set("n", "<C-]>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
