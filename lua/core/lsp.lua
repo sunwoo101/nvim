@@ -5,3 +5,6 @@ vim.diagnostic.config({
     underline = true,
     update_in_insert = true,
 })
+
+vim.lsp.enable('c_sharp')
+vim.lsp.enable('swift')
