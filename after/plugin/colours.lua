@@ -5,8 +5,8 @@ function Colours(colour)
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
-    vim.api.nvim_set_hl(0, "LineNr", { fg = "#cccc00" })
-    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#cccc00", bold = true })
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#b4b4f4" })
+    vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e0e0ff", bold = true })
 end
 
 Colours()
