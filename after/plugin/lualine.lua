@@ -12,7 +12,7 @@ require('lualine').setup {
         icons_enabled = true,
         theme = 'nord',
         component_separators = { left = '', right = '' },
-        section_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
