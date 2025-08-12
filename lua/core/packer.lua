@@ -28,6 +28,11 @@ return require("packer").startup(function(use)
     use("ray-x/lsp_signature.nvim")
     use("Hoffs/omnisharp-extended-lsp.nvim")
     use({
+        "L3MON4D3/LuaSnip",
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
+    use({
         "saghen/blink.cmp",
         requires = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip" },
         run = "cargo build --release",
