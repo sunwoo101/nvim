@@ -51,3 +51,5 @@ end
 -- optional: break before big deletions in insert mode
 imap("<C-w>", "<C-g>u<C-w>")
 imap("<C-u>", "<C-g>u<C-u>")
+
+vim.o.hidden = true
