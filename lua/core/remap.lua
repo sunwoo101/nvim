@@ -14,15 +14,15 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", opts)
-vim.keymap.set("n", "<C-q>", ":tabclose<CR>", opts)
+vim.keymap.set("n", "<leader>q", ":tabclose<CR>", opts)
 vim.keymap.set("n", "<leader><Tab>", ":tabnext<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", ":tabprevious<CR>", opts)
 
 vim.keymap.set("n", "<C-k>d", function()
-	vim.lsp.buf.format()
+    vim.lsp.buf.format()
 end, opts)
 vim.keymap.set("n", "<C-k><C-d>", function()
-	vim.lsp.buf.format()
+    vim.lsp.buf.format()
 end, opts)
 
 vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
@@ -40,15 +40,15 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbo
 vim.keymap.set("v", "<leader>y", '"+y<Esc>', opts)
 
 vim.api.nvim_create_autocmd("ModeChanged", {
-	pattern = "i:*",
-	callback = function()
-		vim.schedule(function()
-			if vim.snippet and vim.snippet.active() then
-				vim.snippet.stop()
-			end
-		end)
-	end,
-	desc = "Exit snippet mode on leaving insert mode",
+    pattern = "i:*",
+    callback = function()
+        vim.schedule(function()
+            if vim.snippet and vim.snippet.active() then
+                vim.snippet.stop()
+            end
+        end)
+    end,
+    desc = "Exit snippet mode on leaving insert mode",
 })
 
 vim.keymap.set("n", "<F12>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
