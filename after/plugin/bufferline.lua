@@ -12,7 +12,7 @@ require("bufferline").setup({
         numbers = "ordinal",
         show_close_icon = false,
         show_buffer_close_icons = false,
-        separator_style = "slant",
+        separator_style = "thin",
         diagnostics = "nvim_lsp",
         diagnostics_indicator = function(_, _, diagnostics_dict, _)
             local s = ""

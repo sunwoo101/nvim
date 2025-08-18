@@ -39,16 +39,11 @@ require("neo-tree").setup({
                 end,
 
                 -- re-add any other actions you want
-                ["q"] = "close",
+                ["q"] = "close_window",
                 ["R"] = "refresh",
                 ["a"] = { "add", config = { show_path = "relative" } },
                 ["d"] = "delete",
                 ["r"] = "rename",
-                ["y"] = "copy_to_clipboard",
-                ["x"] = "cut_to_clipboard",
-                ["p"] = "paste_from_clipboard",
-                ["h"] = "close_node",
-                ["l"] = "open",
             },
         },
     },
