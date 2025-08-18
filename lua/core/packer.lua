@@ -4,10 +4,17 @@ return require("packer").startup(function(use)
     -- Packer
     use("wbthomason/packer.nvim")
 
-    -- File explorer
-    use("nvim-tree/nvim-tree.lua")
-
-    -- File search
+    -- Files
+    -- use("nvim-tree/nvim-tree.lua")
+    use({
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-tree/nvim-web-devicons", -- optional, but recommended
+        }
+    })
     use({
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } },
@@ -15,7 +22,7 @@ return require("packer").startup(function(use)
     --use("theprimeagen/harpoon")
 
     -- Theme
-    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "catppuccin/nvim", as = "catppuccin", after = "catppuccin" })
     use("nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" })
 
     -- Status bar
@@ -45,6 +52,18 @@ return require("packer").startup(function(use)
     -- Style
     use("petertriho/nvim-scrollbar")
     use("lewis6991/gitsigns.nvim")
+    use { 'akinsho/bufferline.nvim', requires = 'nvim-tree/nvim-web-devicons' }
+    use({
+        "utilyre/barbecue.nvim",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        after = "nvim-web-devicons",       -- keep this if you're using NvChad
+        config = function()
+            require("barbecue").setup()
+        end,
+    })
 
     -- Copilot
     use("github/copilot.vim")

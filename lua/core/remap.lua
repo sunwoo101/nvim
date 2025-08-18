@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 
 --vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>", { silent = true, noremap = true })
+-- Toggle Neo-tree as a floating window (NvChad-style)
+vim.keymap.set("n", "<leader>fe", "<cmd>Neotree toggle<CR>", { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
 vim.keymap.set("n", "<leader>h", vim.cmd.split)
 vim.keymap.set("n", "<leader>l", vim.cmd.vsplit)
@@ -14,10 +15,10 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
 vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
-vim.keymap.set("n", "<C-t>", ":tabnew<CR>", opts)
-vim.keymap.set("n", "<leader>q", ":tabclose<CR>", opts)
-vim.keymap.set("n", "<leader><Tab>", ":tabnext<CR>", opts)
-vim.keymap.set("n", "<leader><S-Tab>", ":tabprevious<CR>", opts)
+vim.keymap.set("n", "<leader>t", "<cmd>enew<CR>", opts)
+vim.keymap.set("n", "<leader>q", "<cmd>bdelete<CR>", opts)
+vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
+vim.keymap.set("n", "<leader><S-Tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
 vim.keymap.set("n", "<C-k>d", function()
     vim.lsp.buf.format()

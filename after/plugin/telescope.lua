@@ -14,7 +14,7 @@ require("telescope").setup({
                     local entry = action_state.get_selected_entry()
                     local path = entry.path or entry.filename
                     actions.close(prompt_bufnr)
-                    vim.cmd("tab drop " .. vim.fn.fnameescape(path))
+                    vim.cmd("edit " .. vim.fn.fnameescape(path))
                 end,
             },
             n = {
@@ -22,7 +22,7 @@ require("telescope").setup({
                     local entry = action_state.get_selected_entry()
                     local path = entry.path or entry.filename
                     actions.close(prompt_bufnr)
-                    vim.cmd("tab drop " .. vim.fn.fnameescape(path))
+                    vim.cmd("edit " .. vim.fn.fnameescape(path))
                 end,
             },
         },
