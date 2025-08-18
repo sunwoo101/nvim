@@ -2,6 +2,7 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope find keywords ' })
 
+--[[ This configuration sets up Telescope with custom key mappings for opening files in a new tab.
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
@@ -27,3 +28,4 @@ require("telescope").setup({
         },
     },
 })
+]]

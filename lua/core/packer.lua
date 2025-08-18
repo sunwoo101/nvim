@@ -4,6 +4,9 @@ return require("packer").startup(function(use)
     -- Packer
     use("wbthomason/packer.nvim")
 
+    -- File explorer
+    use("nvim-tree/nvim-tree.lua")
+
     -- File search
     use({
         "nvim-telescope/telescope.nvim",
@@ -42,6 +45,9 @@ return require("packer").startup(function(use)
     -- Style
     use("petertriho/nvim-scrollbar")
     use("lewis6991/gitsigns.nvim")
+
+    -- Copilot
+    use("github/copilot.vim")
 
     -- Discord RPC
     use('andweeb/presence.nvim')
