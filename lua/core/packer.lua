@@ -39,6 +39,10 @@ return require("packer").startup(function(use)
     })
     use("echasnovski/mini.pairs")
 
+    -- Style
+    use("petertriho/nvim-scrollbar")
+    use("lewis6991/gitsigns.nvim")
+
     -- Discord RPC
     use('andweeb/presence.nvim')
 end)

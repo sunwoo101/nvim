@@ -10,7 +10,7 @@ require('mason-lspconfig').setup({
         'cssls',
         'gopls',
         'lua_ls',
-        'omnisharp',
+        'csharp_ls',
         'phpactor',
         'pyrefly', --'pyright',
         'sqlls',

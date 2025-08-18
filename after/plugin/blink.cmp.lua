@@ -31,7 +31,7 @@ require("blink.cmp").setup({
             update_delay_ms = 50
         },
         menu = { auto_show = true },
-        ghost_text = { enabled = false, show_with_menu = true },
+        ghost_text = { enabled = true, show_with_menu = true },
     },
     snippets = { preset = 'luasnip' },
     sources = {
