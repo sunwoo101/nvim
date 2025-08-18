@@ -38,7 +38,7 @@ require("blink.cmp").setup({
         default = { "lsp", "path", "snippets", "buffer" },
     },
     fuzzy = {
-        implementation = "prefer_rust_with_warning",
+        implementation = "lua",
     },
     signature = { enabled = false },
 })

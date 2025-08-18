@@ -12,7 +12,7 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } },
     })
-    use("theprimeagen/harpoon")
+    --use("theprimeagen/harpoon")
 
     -- Theme
     use({ "catppuccin/nvim", as = "catppuccin" })
