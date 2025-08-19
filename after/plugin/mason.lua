@@ -1,10 +1,12 @@
 require("mason").setup();
 require('mason-lspconfig').setup({
+    --[[
     automatic_enable = {
         exclude = {
             "omnisharp",
         },
     },
+    ]]
     ensure_installed = {
         'clangd',
         'cssls',

@@ -16,7 +16,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 vim.keymap.set("n", "<leader>t", "<cmd>enew<CR>", opts)
-vim.keymap.set("n", "<leader>q", "<cmd>bdelete<CR>", opts)
+vim.keymap.set("n", "<leader>w", "<cmd>bdelete<CR>", opts)
 vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
@@ -53,8 +53,8 @@ vim.api.nvim_create_autocmd("ModeChanged", {
     desc = "Exit snippet mode on leaving insert mode",
 })
 
-vim.keymap.set("n", "<F12>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
-vim.keymap.set("n", "<C-]>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
+--vim.keymap.set("n", "<F12>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
+--vim.keymap.set("n", "<C-]>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
 
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })

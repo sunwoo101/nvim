@@ -36,7 +36,7 @@ return require("packer").startup(function(use)
     use("mason-org/mason-lspconfig.nvim")
     use("neovim/nvim-lspconfig")
     use("ray-x/lsp_signature.nvim")
-    use("Hoffs/omnisharp-extended-lsp.nvim")
+    --use("Hoffs/omnisharp-extended-lsp.nvim")
     use({
         "L3MON4D3/LuaSnip",
         -- install jsregexp (optional!:).
