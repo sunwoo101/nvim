@@ -1,18 +1,11 @@
 vim.g.mapleader = " "
 
---vim.keymap.set("n", "<leader>fe", vim.cmd.Ex)
--- Toggle Neo-tree as a floating window (NvChad-style)
-vim.keymap.set("n", "<leader>fe", "<cmd>Neotree toggle<CR>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>v", vim.cmd.vsplit)
-vim.keymap.set("n", "<leader>h", vim.cmd.split)
-vim.keymap.set("n", "<leader>l", vim.cmd.vsplit)
-vim.keymap.set("n", "<leader>j", vim.cmd.split)
-
 local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<leader>fe", "<cmd>Neotree toggle<CR>", opts)
+vim.keymap.set("n", "<leader>h", "<Cmd>leftabove vsplit<Bar>wincmd h<CR>", opts)
+vim.keymap.set("n", "<leader>l", "<Cmd>rightbelow vsplit<Bar>wincmd l<CR>", opts)
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 vim.keymap.set("n", "<leader>t", "<cmd>enew<CR>", opts)
@@ -20,20 +13,13 @@ vim.keymap.set("n", "<leader>w", "<cmd>bdelete<CR>", opts)
 vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
 
-vim.keymap.set("n", "<C-k>d", function()
-    vim.lsp.buf.format()
-end, opts)
-vim.keymap.set("n", "<C-k><C-d>", function()
-    vim.lsp.buf.format()
-end, opts)
-
 vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 vim.keymap.set("i", "<C-M-BS>", "<C-o>d0", opts)
 vim.keymap.set("i", "<C-M-Del>", "<C-o>d$", opts)
 
-vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
 vim.keymap.set("i", "kj", "<Esc>", { noremap = false })
+vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic floag" })
 
