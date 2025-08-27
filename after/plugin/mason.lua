@@ -1,18 +1,11 @@
 require("mason").setup();
 require('mason-lspconfig').setup({
-    --[[
-    automatic_enable = {
-        exclude = {
-            "omnisharp",
-        },
-    },
-    ]]
     ensure_installed = {
         'clangd',
         'cssls',
         'gopls',
         'lua_ls',
-        'csharp_ls',
+        'omnisharp',
         'phpactor',
         'pyrefly', --'pyright',
         'sqlls',
@@ -22,12 +15,4 @@ require('mason-lspconfig').setup({
         'vue_ls',
         'html'
     },
-    --[[
-    handlers = {
-        function(server_name)
-            if server_name == "omnisharp" then return end
-            require('lspconfig')[server_name].setup({})
-        end,
-    }
-    ]]
 })

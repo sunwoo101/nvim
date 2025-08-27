@@ -7,7 +7,6 @@ vim.diagnostic.config({
     signs = true,
 })
 
---vim.lsp.enable('c_sharp') testing csharp_ls for now
 vim.lsp.enable('swift')
 
 -- ── QUIET CMDLINE (keep signatures working) ───────────────────────────────────
