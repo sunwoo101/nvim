@@ -62,6 +62,22 @@ require("lazy").setup({
         end,
     },
     "karb94/neoscroll.nvim",
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("hlchunk").setup({
+                chunk = {
+                    enable = true,
+                    style = { { fg = "#806d9c" }, { fg = "#c21f30" } },
+                },
+                indent = {
+                    enable = true,
+                },
+            })
+        end
+    },
+    'brenoprata10/nvim-highlight-colors',
 
     -- Copilot
     "github/copilot.vim",
