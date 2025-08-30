@@ -27,20 +27,11 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbo
 
 vim.keymap.set("v", "<leader>y", '"+y<Esc>', opts)
 
-vim.api.nvim_create_autocmd("ModeChanged", {
-    pattern = "i:*",
-    callback = function()
-        vim.schedule(function()
-            if vim.snippet and vim.snippet.active() then
-                vim.snippet.stop()
-            end
-        end)
-    end,
-    desc = "Exit snippet mode on leaving insert mode",
-})
-
 --vim.keymap.set("n", "<F12>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
 --vim.keymap.set("n", "<C-]>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
 
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
+
+vim.keymap.set("n", "<Tab>", "<Nop>")
+vim.keymap.set("n", "<C-i>", "<Nop>")

@@ -98,3 +98,40 @@ require("blink.cmp").setup({
     },
     signature = { enabled = false },
 })
+
+local ok_ls, ls = pcall(require, "luasnip")
+
+-- <Tab>: jump/expand snippet → completion next → literal Tab
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
+    -- Neovim built-in snippet
+    if vim.snippet and vim.snippet.active() then
+        vim.snippet.jump(1)
+        return ""
+    end
+    -- LuaSnip
+    if ok_ls and ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+        return ""
+    end
+    -- Completion menu
+    if vim.fn.pumvisible() == 1 then
+        return "<C-n>"
+    end
+    return "<Tab>"
+end, { expr = true, silent = true })
+
+-- <S-Tab>: jump backward → completion prev → literal <S-Tab>
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+    if vim.snippet and vim.snippet.active() then
+        vim.snippet.jump(-1)
+        return ""
+    end
+    if ok_ls and ls.jumpable(-1) then
+        ls.jump(-1)
+        return ""
+    end
+    if vim.fn.pumvisible() == 1 then
+        return "<C-p>"
+    end
+    return "<S-Tab>"
+end, { expr = true, silent = true })
