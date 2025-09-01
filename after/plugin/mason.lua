@@ -7,12 +7,13 @@ require('mason-lspconfig').setup({
         'lua_ls',
         'omnisharp',
         'phpactor',
-        'pyrefly', --'pyright',
+        'pyright', --'pyrefly',
         'sqlls',
         'vtsls',   --'ts_ls',
         'tailwindcss',
         'jdtls',
         'vue_ls',
-        'html'
+        'html',
+        'pylsp'
     },
 })

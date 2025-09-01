@@ -30,3 +30,4 @@ vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = "FloatBorder" })
 
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#b4b4f4" })
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e0e0ff", bold = true })
+vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#c9c9c9", italic = true })
