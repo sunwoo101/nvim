@@ -46,6 +46,7 @@ require("lazy").setup({
         event = "InsertEnter",
         config = true
     },
+    "windwp/nvim-ts-autotag",
 
     -- Style / UI
     "petertriho/nvim-scrollbar",
