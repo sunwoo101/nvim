@@ -1,6 +1,6 @@
 vim.diagnostic.config({
     virtual_lines = false,
-    virtual_text = true,
+    virtual_text = { priority = 10, spacing = 4, prefix = '●' },
     severity_sort = true,
     underline = true,
     update_in_insert = true,
