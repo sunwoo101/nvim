@@ -18,8 +18,18 @@ vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 vim.keymap.set("i", "<C-M-BS>", "<C-o>d0", opts)
 vim.keymap.set("i", "<C-M-Del>", "<C-o>d$", opts)
 
-vim.keymap.set("i", "kj", "<Esc>", { noremap = false })
-vim.keymap.set("i", "jk", "<Esc>", { noremap = false })
+local function exit_snippet_or_esc()
+    local ok, ls = pcall(require, "luasnip")
+    if ok and ls.session.current_nodes[vim.api.nvim_get_current_buf()] then
+        ls.unlink_current()
+    end
+    return "<Esc>"
+end
+
+vim.keymap.set({ "i", "s" }, "jk", exit_snippet_or_esc, { expr = true, silent = true })
+vim.keymap.set({ "i", "s" }, "kj", exit_snippet_or_esc, { expr = true, silent = true })
+vim.keymap.set('t', 'jk', [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.keymap.set('t', 'kj', [[<C-\><C-n>]], { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic floag" })
 

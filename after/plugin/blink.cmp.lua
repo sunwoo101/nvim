@@ -73,21 +73,16 @@ require("blink.cmp").setup({
         },
         menu = {
             auto_show = true,
-            border = "rounded"
+            border = "rounded",
+            draw = {
+                columns = {
+                    { "kind_icon", "kind",              gap = 1 },
+                    { "label",     "label_description", gap = 1 },
+                },
+            }
         },
         ghost_text = { enabled = true, show_with_menu = true },
         accept = { auto_brackets = { enabled = true }, },
-    },
-    menu = {
-        auto_show = true,
-
-        -- nvim-cmp style menu
-        draw = {
-            columns = {
-                { "label",     "label_description", gap = 1 },
-                { "kind_icon", "kind" }
-            },
-        }
     },
     snippets = { preset = 'luasnip' },
     sources = {

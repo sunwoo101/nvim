@@ -30,6 +30,19 @@ require("lazy").setup({
     "mason-org/mason.nvim",
     "mason-org/mason-lspconfig.nvim",
     "ray-x/lsp_signature.nvim",
+    {
+        "seblyng/roslyn.nvim",
+        ---@module 'roslyn.config'
+        ---@type RoslynNvimConfig
+        opts = {
+            filewatching = "auto",
+            choose_target = nil,
+            ignore_target = nil,
+            broad_search = false,
+            lock_target = false,
+            silent = true,
+        }
+    },
 
     -- Snippets / completion
     {
@@ -60,7 +73,7 @@ require("lazy").setup({
                 delay = 50,
                 ignore_whitespace = false,
             },
-            current_line_blame_formatter = "     <author>, <author_time:%Y-%m-%d>",
+            current_line_blame_formatter = "      <author>, (<author_time:%d/%m/%Y>)",
         },
     },
     {
@@ -91,6 +104,9 @@ require("lazy").setup({
         end
     },
     'brenoprata10/nvim-highlight-colors',
+
+    -- Tools
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
     -- Copilot
     "github/copilot.vim",

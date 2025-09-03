@@ -1,11 +1,41 @@
 vim.diagnostic.config({
     virtual_lines = false,
-    virtual_text = { priority = 10, spacing = 4, prefix = '●' },
+    virtual_text = {
+        priority = 10,
+        spacing = 4,
+        prefix = '●'
+    },
     severity_sort = true,
     underline = true,
     update_in_insert = true,
-    signs = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '󰅚',
+            [vim.diagnostic.severity.WARN] = '󰀪',
+            [vim.diagnostic.severity.INFO] = '󰋽',
+            [vim.diagnostic.severity.HINT] = '󰌶',
+        },
+        linehl = {
+            [vim.diagnostic.severity.ERROR] = "DiagnosticLineError",
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = 'DiagnosticError',
+            [vim.diagnostic.severity.WARN] = 'DiagnosticWarn',
+            [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
+            [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
+        },
+    },
 })
+
+vim.api.nvim_set_hl(0, "DiagnosticLineError", { bg = "#51202A" })
+vim.api.nvim_set_hl(0, "DiagnosticLineWarn", { bg = "#51412A" })
+
+-- remove background for diagnostic virtual text
+for _, severity in ipairs({ "Error", "Warn", "Info", "Hint" }) do
+    local hl = "DiagnosticVirtualText" .. severity
+    vim.api.nvim_set_hl(0, hl, { fg = vim.fn.synIDattr(vim.fn.hlID(hl), "fg"), bg = "NONE" })
+end
+
 
 vim.lsp.enable('swift')
 

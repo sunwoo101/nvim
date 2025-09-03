@@ -1,11 +1,16 @@
-require("mason").setup();
+require("mason").setup({
+    registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+    },
+});
 require('mason-lspconfig').setup({
     ensure_installed = {
         'clangd',
         'cssls',
         'gopls',
         'lua_ls',
-        'omnisharp',
+        --'omnisharp', Install roslyn and rzls from Mason.
         'phpactor',
         'pyright', --'pyrefly',
         'sqlls',
