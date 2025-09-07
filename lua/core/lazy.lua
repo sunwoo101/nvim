@@ -29,6 +29,7 @@ require("lazy").setup({
     "neovim/nvim-lspconfig",
     "mason-org/mason.nvim",
     "mason-org/mason-lspconfig.nvim",
+    "mfussenegger/nvim-jdtls",
     "ray-x/lsp_signature.nvim",
     {
         "seblyng/roslyn.nvim",
