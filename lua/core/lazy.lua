@@ -109,9 +109,6 @@ require("lazy").setup({
     -- Tools
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
 
-    -- Copilot
-    "github/copilot.vim",
-
     -- Discord RPC
     "andweeb/presence.nvim",
 }, {
