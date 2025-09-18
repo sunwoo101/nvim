@@ -1,5 +1,6 @@
 require("catppuccin").setup({
     flavour = "mocha", -- or latte/frappe/macchiato
+    transparent_background = true,
     -- ...your other options...
     custom_highlights = function(cp)
         return {
@@ -28,6 +29,6 @@ vim.api.nvim_set_hl(0, "BlinkCmpMenuBorder", { link = "FloatBorder" })
 vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", { link = "FloatBorder" })
 
 
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#b4b4f4" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e0e0ff", bold = true })
-vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#a4abbf", italic = true })
+-- vim.api.nvim_set_hl(0, "LineNr", { fg = "#b4b4f4" })
+-- vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e0e0ff", bold = true })
+-- vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", { fg = "#a4abbf", italic = true })
