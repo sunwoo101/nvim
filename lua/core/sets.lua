@@ -54,3 +54,7 @@ imap("<C-w>", "<C-g>u<C-w>")
 imap("<C-u>", "<C-g>u<C-u>")
 
 vim.o.hidden = true
+vim.cmd([[
+  cnoreabbrev w  silent w
+  cnoreabbrev wa silent wa
+]])
