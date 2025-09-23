@@ -56,12 +56,6 @@ require("blink.cmp").setup({
             Operator      = "󰆕",
             TypeParameter = "",
         },
-        source_labels = {
-            lsp      = "[LSP]",
-            path     = "[Path]",
-            buffer   = "[Buffer]",
-            snippets = "[Snip]",
-        },
     },
     completion = {
         trigger = { show_in_snippet = true },
