@@ -64,19 +64,7 @@ require("lazy").setup({
 
     -- Style / UI
     "petertriho/nvim-scrollbar",
-    {
-        "lewis6991/gitsigns.nvim",
-        opts = {
-            current_line_blame = true,
-            current_line_blame_opts = {
-                virt_text = true,
-                virt_text_pos = "eol",
-                delay = 50,
-                ignore_whitespace = false,
-            },
-            current_line_blame_formatter = "      <author>, (<author_time:%d/%m/%Y>)",
-        },
-    },
+    "lewis6991/gitsigns.nvim",
     {
         "akinsho/bufferline.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
