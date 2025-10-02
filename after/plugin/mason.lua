@@ -19,6 +19,7 @@ require('mason-lspconfig').setup({
         'jdtls',
         'vue_ls',
         'html',
-        'pylsp'
+        'pylsp',
+        'qmlls'
     },
 })

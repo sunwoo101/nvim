@@ -3,7 +3,7 @@ vim.opt.termguicolors = true
 require("nvim-highlight-colors").setup {
     ---Render style
     ---@usage 'background'|'foreground'|'virtual'
-    render = 'foreground',
+    render = 'virtual',
 
     ---Highlight hex colors, e.g. '#FFFFFF'
     enable_hex = true,
