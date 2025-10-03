@@ -44,6 +44,7 @@ require("lazy").setup({
             silent = true,
         }
     },
+    'stevearc/conform.nvim',
 
     -- Snippets / completion
     {
