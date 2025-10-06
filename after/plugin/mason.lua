@@ -14,7 +14,7 @@ require('mason-lspconfig').setup({
         'phpactor',
         --'pyright', --'pyrefly',
         'sqlls',
-        'ts_ls', --'vtsls',
+        'vtsls', --'ts_ls',
         'tailwindcss',
         'jdtls',
         'vue_ls',
