@@ -28,7 +28,7 @@ require("bufferline").setup({
         end,
         modified_icon = "●",
     },
-    highlights = catppuccin_integration.get {
+    highlights = catppuccin_integration.get_theme {
         styles = { "italic", "bold" },
         custom = {
             all = {
