@@ -1,5 +1,11 @@
 vim.opt.termguicolors = true
 
+local ok, catppuccin_integration = pcall(require, "catppuccin.groups.integrations.bufferline")
+if not ok then
+    vim.notify("Catppuccin bufferline integration not found", vim.log.levels.WARN)
+    return
+end
+
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 
 require("bufferline").setup({
@@ -22,7 +28,7 @@ require("bufferline").setup({
         end,
         modified_icon = "●",
     },
-    highlights = require("catppuccin.groups.integrations.bufferline").get_theme {
+    highlights = catppuccin_integration.get {
         styles = { "italic", "bold" },
         custom = {
             all = {
