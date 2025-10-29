@@ -28,7 +28,7 @@ vim.opt.showmode = false -- lualine shows mode anyway
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        --theme = 'catppuccin',
+        theme = 'catppuccin',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {
@@ -65,7 +65,7 @@ require('lualine').setup {
         lualine_b = { 'branch', 'diagnostics' },
         lualine_c = { macro_recording },
         lualine_x = { lsp_attached },
-        lualine_y = { 'filename' },
+        lualine_y = {},
         lualine_z = {},
     },
     inactive_sections = {

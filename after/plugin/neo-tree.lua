@@ -1,4 +1,19 @@
 require("neo-tree").setup({
+    default_component_configs = {
+        git_status = {
+            symbols = {
+                added     = "",
+                modified  = "",
+                deleted   = "",
+                renamed   = "",
+                untracked = "",
+                ignored   = "",
+                unstaged  = "",
+                staged    = "",
+                conflict  = "",
+            },
+        },
+    },
     enable_diagnostics = true,
     close_if_last_window = false,
 
