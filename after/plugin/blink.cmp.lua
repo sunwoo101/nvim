@@ -1,3 +1,29 @@
+-- Fix Roslyn markdown formatting for hover/docs (works with blink.cmp too)
+local util = vim.lsp.util
+local orig_convert = util.convert_input_to_markdown_lines
+
+util.convert_input_to_markdown_lines = function(input, ...)
+    if type(input) == "table" and input.kind == "markdown" and type(input.value) == "string" then
+        local s = input.value
+
+        -- 1️⃣ Add newlines only for "\. " patterns (your docs)
+        s = s:gsub("\\%.%s+(%u)", ".\n%1")
+
+        -- 2️⃣ Unescape all remaining "\." to "."
+        s = s:gsub("\\%.", ".")
+
+        -- 3️⃣ Unescape other markdown escapes like \* \[ \] etc.
+        s = s:gsub("\\([%[%]%(%){}`*_#+%-])", "%1")
+
+        -- 4️⃣ Normalize Windows newlines (CRLF)
+        s = s:gsub("\r\n", "\n")
+
+        input = { kind = "markdown", value = s }
+    end
+
+    return orig_convert(input, ...)
+end
+
 local function undobreak()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-g>u", true, false, true), "n", false)
 end
