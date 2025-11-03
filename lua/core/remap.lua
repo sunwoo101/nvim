@@ -45,3 +45,5 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
 
 vim.keymap.set("n", "<Tab>", "<Nop>")
 vim.keymap.set("n", "<C-i>", "<Nop>")
+
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "LSP Code Action" })

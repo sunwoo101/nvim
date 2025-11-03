@@ -37,7 +37,7 @@ require("lazy").setup({
         ---@module 'roslyn.config'
         ---@type RoslynNvimConfig
         opts = {
-            filewatching = "auto",
+            filewatching = "roslyn",
             choose_target = nil,
             ignore_target = nil,
             broad_search = false,
