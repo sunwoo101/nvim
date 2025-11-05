@@ -35,7 +35,7 @@ vim.o.more = false
 vim.o.showmode = true
 vim.opt.cursorline = true
 
--- finer-grained undo like VSCodeh
+-- finer-grained undo like VSCode
 local imap = function(lhs, rhs) vim.keymap.set("i", lhs, rhs, { silent = true }) end
 
 -- break on common boundaries

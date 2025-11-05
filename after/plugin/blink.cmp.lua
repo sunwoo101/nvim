@@ -114,6 +114,12 @@ require("blink.cmp").setup({
     signature = { enabled = false },
 })
 
+vim.keymap.set("c", "<Esc>", function()
+    pcall(function() require("blink.cmp").hide() end) -- hide if open
+    local keys = vim.api.nvim_replace_termcodes("<C-c>", true, false, true)
+    vim.api.nvim_feedkeys(keys, "n", true)          -- then cancel cmdline
+end, { noremap = true, silent = true, desc = "Hide Blink + cancel cmdline" })
+
 local ok_ls, ls = pcall(require, "luasnip")
 
 -- <Tab>: jump/expand snippet → completion next → literal Tab

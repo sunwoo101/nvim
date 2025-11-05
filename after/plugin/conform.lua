@@ -8,9 +8,11 @@ require("conform").setup({
         html = { "prettier" },
         css = { "prettier" },
     },
-    format_on_save = {
-        lsp_fallback = true, -- use LSP if no formatter available
-        async = false,
-        timeout_ms = 500,
-    },
 })
+
+vim.keymap.set("n", "<leader>fm", function()
+    require("conform").format({
+        async = true,
+        lsp_fallback = true,
+    })
+end, { desc = "Format file" })
