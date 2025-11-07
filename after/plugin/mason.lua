@@ -12,7 +12,7 @@ require('mason-lspconfig').setup({
         'lua_ls',
         --'omnisharp', Install roslyn and rzls from Mason.
         'phpactor',
-        --'pyright', --'pyrefly',
+        'basedpyright', --'pyright', --'pyrefly',
         'sqlls',
         'vtsls', --'ts_ls',
         'tailwindcss',
