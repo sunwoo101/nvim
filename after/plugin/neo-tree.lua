@@ -26,6 +26,18 @@ require("neo-tree").setup({
             hide_gitignored = false,
         },
 
+        components = {
+            padded_name = function(config, node, state)
+                local default = require("neo-tree.sources.common.components").name(
+                    config,
+                    node,
+                    state
+                )
+                default.text = default.text .. "  "
+                return default
+            end,
+        },
+
         window = {
             use_default_mappings = false,
             mapping_options = { noremap = true, nowait = true, silent = true },
@@ -61,11 +73,21 @@ require("neo-tree").setup({
                 ["r"] = "rename",
             },
         },
+        renderers = {
+            file = {
+                { "icon" },
+                { "padded_name", use_git_status_colors = true },
+            },
+            directory = {
+                { "icon" },
+                { "padded_name" },
+            },
+        },
     },
 
     window = {
         position = "left",
-        width = 40,
+        auto_expand_width = true,
     },
 
     -- numbers in the tree (optional)
