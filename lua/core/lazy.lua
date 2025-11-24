@@ -101,7 +101,6 @@ require("lazy").setup({
 
     -- Discord RPC
     "andweeb/presence.nvim",
-    "jackplus-xyz/player-one.nvim",
 }, {
     -- optional: performance/lazy-load tweaks
     defaults = { lazy = false },
