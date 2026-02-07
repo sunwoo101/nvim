@@ -36,6 +36,7 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })
 
 vim.keymap.set("v", "<leader>y", '"+y<Esc>', opts)
+vim.keymap.set("n", "<leader>p", '"+p', opts)
 
 --vim.keymap.set("n", "<F12>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
 --vim.keymap.set("n", "<C-]>", "<cmd>lua require('omnisharp_extended').telescope_lsp_definition()<CR>", opts)
