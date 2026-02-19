@@ -15,9 +15,14 @@ vim.keymap.set({ "n", "v" }, "<C-k>", function()
 end, { silent = true })
 ]]
 
--- Instant scroll --
--- half-page down
-vim.keymap.set({ "n", "v" }, "<C-j>", "<C-d>", { noremap = true, silent = true })
+-- Move cursor half-page down (respects scrolloff)
+vim.keymap.set({ "n", "v" }, "<C-j>", function()
+  local lines = math.floor(vim.fn.winheight(0) / 2)
+  return "m'" .. lines .. "j"
+end, { expr = true, silent = true, desc = "Half-page down with cursor movement" })
 
--- half-page up
-vim.keymap.set({ "n", "v" }, "<C-k>", "<C-u>", { noremap = true, silent = true })
+-- Move cursor half-page up (respects scrolloff)
+vim.keymap.set({ "n", "v" }, "<C-k>", function()
+  local lines = math.floor(vim.fn.winheight(0) / 2)
+  return "m'" .. lines .. "k"
+end, { expr = true, silent = true, desc = "Half-page up with cursor movement" })
