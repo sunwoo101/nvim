@@ -37,7 +37,7 @@ for _, severity in ipairs({ "Error", "Warn", "Info", "Hint" }) do
 end
 
 
-vim.lsp.enable('swift')
+vim.lsp.enable('sourcekit-lsp')
 
 -- ── QUIET CMDLINE (keep signatures working) ───────────────────────────────────
 -- 1) Prevent pager blocks

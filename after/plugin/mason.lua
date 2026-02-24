@@ -4,22 +4,26 @@ require("mason").setup({
         "github:Crashdummyy/mason-registry",
     },
 });
-require('mason-lspconfig').setup({
+require('mason-lspconfig').setup()
+require('mason-tool-installer').setup({
     ensure_installed = {
-        --'clangd',
+        'clangd',
         'cssls',
         'gopls',
         'lua_ls',
-        --'omnisharp', Install roslyn and rzls from Mason.
         'phpactor',
         'basedpyright', --'pyright', --'pyrefly',
         'sqlls',
-        'vtsls', --'ts_ls',
+        'vtsls',        --'ts_ls',
         'tailwindcss',
         'jdtls',
         'vue_ls',
         'html',
         'pylsp',
-        'qmlls'
+        'qmlls',
+        "xcode-build-server",
+        "roslyn",
     },
+    auto_update = true,
+    run_on_start = true,
 })

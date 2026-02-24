@@ -11,11 +11,8 @@ require("conform").setup({
 })
 
 vim.keymap.set("n", "<leader>fm", function()
-    --[[
     require("conform").format({
-        async = true,
         lsp_fallback = true,
     })
-    ]]
-    vim.lsp.buf.format({ async = true })
+    --vim.lsp.buf.format({ async = true })
 end, { desc = "Format file" })

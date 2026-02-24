@@ -47,6 +47,11 @@ require("lazy").setup({
     },
     'stevearc/conform.nvim',
 
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+    },
+
     -- Snippets / completion
     {
         "L3MON4D3/LuaSnip",
