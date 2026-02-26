@@ -4,7 +4,15 @@ require("mason").setup({
         "github:Crashdummyy/mason-registry",
     },
 });
-require('mason-lspconfig').setup()
+
+require("mason-lspconfig").setup {
+    automatic_enable = {
+        exclude = {
+            "postgres_lsp"
+        }
+    }
+}
+
 require('mason-tool-installer').setup({
     ensure_installed = {
         'clangd',
@@ -13,7 +21,7 @@ require('mason-tool-installer').setup({
         'lua_ls',
         'phpactor',
         'basedpyright', --'pyright', --'pyrefly',
-        'sqlls',
+        'postgres_lsp', -- sqlls
         'vtsls',        --'ts_ls',
         'tailwindcss',
         'jdtls',

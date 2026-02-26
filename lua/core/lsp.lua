@@ -38,6 +38,7 @@ end
 
 
 vim.lsp.enable('sourcekit-lsp')
+vim.lsp.enable('postgres_lsp')
 
 -- ── QUIET CMDLINE (keep signatures working) ───────────────────────────────────
 -- 1) Prevent pager blocks
