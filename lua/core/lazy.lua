@@ -68,6 +68,7 @@ require("lazy").setup({
         config = true
     },
     "windwp/nvim-ts-autotag",
+    "tpope/vim-sleuth",
 
     -- Style / UI
     "petertriho/nvim-scrollbar",
