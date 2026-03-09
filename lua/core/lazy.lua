@@ -101,6 +101,14 @@ require("lazy").setup({
         end
     },
     'brenoprata10/nvim-highlight-colors',
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
+    "NStefan002/screenkey.nvim",
 
     -- Tools
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
