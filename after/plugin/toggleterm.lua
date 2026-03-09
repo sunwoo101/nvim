@@ -11,6 +11,8 @@ require("toggleterm").setup({
 
 local function toggle_float_term()
     require("toggleterm").toggle(1, nil, nil, "float")
+    vim.wo.number = true
+    vim.wo.relativenumber = true
 end
 
 vim.keymap.set({ "n", "t" }, "<C-CR>", toggle_float_term, { silent = true, desc = "Toggle float terminal" })

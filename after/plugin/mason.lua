@@ -31,6 +31,8 @@ require('mason-tool-installer').setup({
         'qmlls',
         "xcode-build-server",
         "roslyn",
+        "yamlls",
+        "marksman",
     },
     auto_update = true,
     run_on_start = true,

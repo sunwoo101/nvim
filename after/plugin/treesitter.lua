@@ -19,7 +19,8 @@ require 'nvim-treesitter.configs'.setup {
         "vimdoc",
         "query",
         "markdown",
-        "markdown_inline"
+        "markdown_inline",
+        "yaml",
     },
     sync_install = false,
     auto_install = true,

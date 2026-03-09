@@ -12,6 +12,13 @@ vim.keymap.set("n", "<leader>t", "<cmd>enew<CR>", opts)
 vim.keymap.set("n", "<leader>w", "<cmd>bdelete<CR>", opts)
 vim.keymap.set("n", "<leader><Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
 vim.keymap.set("n", "<leader><S-Tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
+vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
+vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", opts)
+
+vim.keymap.set("n", "<leader>o", "<C-o>", { desc = "Jump Backward", noremap = true, silent = true })
+vim.keymap.set("n", "<leader>i", "<C-i>", { desc = "Jump Forward", noremap = true, silent = true })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP Definition" })
 
 vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
 vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
@@ -44,7 +51,7 @@ vim.keymap.set("n", "<leader>p", '"+p', opts)
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
 
-vim.keymap.set("n", "<Tab>", "<Nop>")
-vim.keymap.set("n", "<C-i>", "<Nop>")
+--vim.keymap.set("n", "<Tab>", "<Nop>")
+--vim.keymap.set("n", "<C-i>", "<Nop>")
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "LSP Code Action" })
