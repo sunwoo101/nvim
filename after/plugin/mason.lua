@@ -20,14 +20,13 @@ require('mason-tool-installer').setup({
         'gopls',
         'lua_ls',
         'phpactor',
-        'basedpyright', --'pyright', --'pyrefly',
+        'basedpyright', --'pyright', --'pyrefly', 'pylsp'
         'postgres_lsp', -- sqlls
         'vtsls',        --'ts_ls',
         'tailwindcss',
         'jdtls',
         'vue_ls',
         'html',
-        'pylsp',
         'qmlls',
         "xcode-build-server",
         "roslyn",
