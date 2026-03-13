@@ -101,7 +101,7 @@ require("blink.cmp").setup({
                 },
             }
         },
-        ghost_text = { enabled = true, show_with_menu = true },
+        ghost_text = { enabled = false, show_with_menu = true },
         accept = { auto_brackets = { enabled = true }, },
     },
     snippets = { preset = 'luasnip' },
