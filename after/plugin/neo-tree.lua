@@ -77,10 +77,12 @@ require("neo-tree").setup({
             file = {
                 { "icon" },
                 { "padded_name", use_git_status_colors = true },
+                { "diagnostics" },
             },
             directory = {
                 { "icon" },
                 { "padded_name" },
+                { "diagnostics" },
             },
         },
     },
