@@ -9,7 +9,6 @@ require("bufferline").setup({
         separator_style = "none",
         diagnostics = "nvim_lsp",
         indicator = { style = "icon" },
-        --[[
         diagnostics_indicator = function(_, _, diagnostics_dict, _)
             local s = ""
             if diagnostics_dict.error then
@@ -20,7 +19,15 @@ require("bufferline").setup({
             end
             return s
         end,
-        ]]
         modified_icon = "●",
+
+        -- PREVENTS "No Name" from showing up
+        custom_filter = function(buf_number)
+            -- Hide the dashboard and empty buffers from the tab list
+            if vim.api.nvim_buf_get_name(buf_number) == "" and vim.bo[buf_number].buftype == "" then
+                return false
+            end
+            return true
+        end,
     },
 })

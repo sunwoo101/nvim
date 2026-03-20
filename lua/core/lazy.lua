@@ -1,18 +1,6 @@
 -- Plugin spec (packer `use()` -> lazy specs)
 require("lazy").setup({
     -- Files
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "nvim-tree/nvim-web-devicons",
-        },
-    },
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-    },
 
     -- Theme & Treesitter
     { "catppuccin/nvim",                 name = "catppuccin" },
@@ -77,29 +65,7 @@ require("lazy").setup({
         "akinsho/bufferline.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons", "catppuccin/nvim" },
     },
-    {
-        "utilyre/barbecue.nvim",
-        dependencies = { "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" },
-        config = function()
-            require("barbecue").setup()
-        end,
-    },
-    "karb94/neoscroll.nvim",
-    {
-        "shellRaining/hlchunk.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("hlchunk").setup({
-                chunk = {
-                    enable = true,
-                    style = { { fg = "#806d9c" }, { fg = "#c21f30" } },
-                },
-                indent = {
-                    enable = true,
-                },
-            })
-        end
-    },
+    'Bekaboo/dropbar.nvim',
     'brenoprata10/nvim-highlight-colors',
     {
         'MeanderingProgrammer/render-markdown.nvim',
@@ -109,6 +75,11 @@ require("lazy").setup({
         opts = {},
     },
     "NStefan002/screenkey.nvim",
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+    },
 
     -- Tools
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
