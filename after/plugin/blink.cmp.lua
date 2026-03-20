@@ -24,10 +24,6 @@ util.convert_input_to_markdown_lines = function(input, ...)
     return orig_convert(input, ...)
 end
 
-local function undobreak()
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-g>u", true, false, true), "n", false)
-end
-
 require("blink.cmp").setup({
     keymap = {
         preset = "super-tab",
@@ -37,9 +33,9 @@ require("blink.cmp").setup({
         ['<Tab>'] = {
             function(cmp)
                 if cmp.snippet_active() then
-                    return cmp.accept({ callback = undobreak() })
+                    return cmp.accept()
                 else
-                    return cmp.select_and_accept({ callback = undobreak() })
+                    return cmp.select_and_accept()
                 end
             end,
             'snippet_forward',

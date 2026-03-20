@@ -34,10 +34,30 @@ require("lazy").setup({
         }
     },
     'stevearc/conform.nvim',
+    'mfussenegger/nvim-dap',
 
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
         dependencies = { "williamboman/mason.nvim" },
+    },
+
+    {
+        "wojciech-kulik/xcodebuild.nvim",
+        dependencies = {
+            --"nvim-telescope/telescope.nvim",
+            "folke/snacks.nvim",
+            "MunifTanjim/nui.nvim",
+        },
+        config = function()
+            require("xcodebuild").setup({
+                logs = {
+                    logs_formatter = nil,
+                },
+                code_coverage = {
+                    enabled = true,
+                },
+            })
+        end,
     },
 
     -- Snippets / completion

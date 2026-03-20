@@ -29,11 +29,13 @@ vim.keymap.set("i", "<C-M-Del>", "<C-o>d$", opts)
 
 local function smart_esc()
     local blink = require("blink.cmp")
-
     local ok, ls = pcall(require, "luasnip")
+
     if ok and ls.session and ls.session.current_nodes[vim.api.nvim_get_current_buf()] then
         if blink.is_visible() then
-            blink.hide()
+            vim.schedule(function()
+                blink.hide()
+            end)
 
             return "<Ignore>"
         end

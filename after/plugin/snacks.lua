@@ -2,6 +2,10 @@ vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end, { desc =
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 
 require("snacks").setup({
+    image = {
+        enabled = true,
+        force_magick = false,
+    },
     bigfile = { enabled = false },
     dashboard = { enabled = true },
     indent = { enabled = true },
