@@ -45,7 +45,12 @@ require("snacks").setup({
                 auto_close = true,
                 hidden = true,
                 ignored = true,
-                layout = { preset = "default" },
+                layout = {
+                    preset = "sidebar",
+                    layout = {
+                        width = 80,
+                    }
+                },
                 win = {
                     list = {
                         wo = {
