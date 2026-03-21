@@ -78,7 +78,7 @@ local function toggle_hub()
         finder = function() return items end,
         format = function(item, _)
             return {
-                { tostring(item.idx) .. ". ", "SnacksPickerIdx" }, -- The number with a highlight group
+                { tostring(item.idx) .. ". ", "SnacksPickerIdx" },  -- The number with a highlight group
                 { item.text,                  "SnacksPickerText" }, -- The title
             }
         end,
@@ -120,6 +120,8 @@ local function toggle_hub()
             picker:close()
             if item then
                 require("toggleterm").toggle(item.idx, nil, nil, "float")
+                vim.wo.number = true
+                vim.wo.relativenumber = true
             end
         end,
     })
