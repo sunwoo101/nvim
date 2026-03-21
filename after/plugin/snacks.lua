@@ -13,7 +13,18 @@ require("snacks").setup({
     notifier = { enabled = true },
     quickfile = { enabled = false },
     scope = { enabled = true },
-    scroll = { enabled = true },
+    scroll = {
+        enabled = true,
+        animate = {
+            duration = { step = 5, total = 100 }, -- Half the default speed (10/200)
+            easing = "linear",                    -- Linear feels more consistent for fast scrolling
+        },
+        -- This makes repeated scrolling (holding j/k) even faster
+        animate_repeat = {
+            delay = 50, -- Start speed-up after 50ms of holding the key
+            duration = { step = 3, total = 50 },
+        },
+    },
     statuscolumn = { enabled = false },
     words = { enabled = false },
     explorer = {
@@ -49,6 +60,7 @@ require("snacks").setup({
                             ["d"] = "explorer_del",
                             ["r"] = "explorer_rename",
                             ["R"] = "explorer_update",
+                            ["l"] = "explorer_focus", -- Change directory
                         },
                     },
                 },
