@@ -34,6 +34,7 @@ require("lazy").setup({
     },
     'stevearc/conform.nvim',
     'mfussenegger/nvim-dap',
+    'github/copilot.vim',
 
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
