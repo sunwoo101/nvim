@@ -30,6 +30,7 @@ require("snacks").setup({
     explorer = {
         enabled = true,
         replace_netrw = true,
+        trash = true,
     },
     picker = {
         sources = {
