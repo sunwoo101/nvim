@@ -16,7 +16,7 @@ require("snacks").setup({
     scroll = {
         enabled = true,
         animate = {
-            duration = { step = 5, total = 100 }, -- Half the default speed (10/200)
+            duration = { step = 10, total = 100 }, -- Half the default speed (10/200)
             easing = "linear",                    -- Linear feels more consistent for fast scrolling
         },
         -- This makes repeated scrolling (holding j/k) even faster
@@ -36,7 +36,7 @@ require("snacks").setup({
         sources = {
             explorer = {
                 finder = "explorer",
-                watch = true,
+                watch = false,
                 highlights = true,
                 diagnostics = true,
                 diagnostics_open = true,

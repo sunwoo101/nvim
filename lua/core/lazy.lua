@@ -4,7 +4,7 @@ require("lazy").setup({
 
     -- Theme & Treesitter
     { "catppuccin/nvim",                 name = "catppuccin" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", branch = "master" },
     "yioneko/nvim-yati",
 
     -- Status bar
