@@ -4,6 +4,7 @@ require("lazy").setup({
 
     -- Theme & Treesitter
     { "catppuccin/nvim",                 name = "catppuccin" },
+    -- use tree sitter 0.25.10
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", branch = "master" },
     "yioneko/nvim-yati",
 
