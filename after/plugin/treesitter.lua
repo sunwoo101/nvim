@@ -1,33 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
-    ensure_installed = {
-        "go",
-        "python",
-        "java",
-        "javascript",
-        "typescript",
-        "vue",
-        "swift",
-        "c_sharp",
-        "css",
-        "php",
-        "sql",
-        "c",
-        "html",
-        "cpp",
-        "lua",
-        "vim",
-        "vimdoc",
-        "query",
-        "markdown",
-        "markdown_inline",
-        "yaml",
-        "scss",
-        "svelte",
-        "tsx",
-        "typst",
-        "latex",
-        "norg",
-    },
+require('nvim-treesitter').setup {
     sync_install = false,
     auto_install = true,
     highlight = {
@@ -40,13 +11,8 @@ require 'nvim-treesitter.configs'.setup {
     },
 }
 
-vim.api.nvim_create_autocmd({ "BufEnter", "FileType" }, {
-    pattern = "python",
-    callback = function()
-        if pcall(function()
-                return require("nvim-treesitter.parsers").has_parser("python")
-            end) then
-            vim.bo.indentexpr = "nvim_treesitter#indent()"
-        end
-    end,
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(ev)
+    local ok, _ = pcall(vim.treesitter.start)
+  end,
 })
