@@ -60,3 +60,5 @@ vim.cmd([[
   cnoreabbrev w  silent w
   cnoreabbrev wa silent wa
 ]])
+
+vim.lsp.document_color.enable(false)
