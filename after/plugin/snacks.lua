@@ -36,7 +36,7 @@ require("snacks").setup({
         sources = {
             explorer = {
                 finder = "explorer",
-                watch = false,
+                watch = true,
                 highlights = true,
                 diagnostics = true,
                 diagnostics_open = true,
