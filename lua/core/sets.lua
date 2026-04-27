@@ -1,3 +1,26 @@
+# neovide
+vim.g.neovide_opacity = 0.7
+vim.g.neovide_window_blurred = true
+vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
+
+-- Terminal colors (match kitty)
+vim.g.terminal_color_0  = "#38383F"
+vim.g.terminal_color_8  = "#ABA8A1"
+vim.g.terminal_color_1  = "#99A0D3"
+vim.g.terminal_color_9  = "#99A0D3"
+vim.g.terminal_color_2  = "#D7ADD1"
+vim.g.terminal_color_10 = "#D7ADD1"
+vim.g.terminal_color_3  = "#67CFF9"
+vim.g.terminal_color_11 = "#67CFF9"
+vim.g.terminal_color_4  = "#E2DFEF"
+vim.g.terminal_color_12 = "#E2DFEF"
+vim.g.terminal_color_5  = "#D8F7FC"
+vim.g.terminal_color_13 = "#D8F7FC"
+vim.g.terminal_color_6  = "#FAF1DF"
+vim.g.terminal_color_14 = "#FAF1DF"
+vim.g.terminal_color_7  = "#F4F0E7"
+vim.g.terminal_color_15 = "#F4F0E7"
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 

@@ -13,6 +13,7 @@ require("snacks").setup({
     notifier = { enabled = true },
     quickfile = { enabled = false },
     scope = { enabled = true },
+    --[[
     scroll = {
         enabled = true,
         animate = {
@@ -25,6 +26,7 @@ require("snacks").setup({
             duration = { step = 3, total = 50 },
         },
     },
+    --]]
     statuscolumn = { enabled = false },
     words = { enabled = false },
     explorer = {

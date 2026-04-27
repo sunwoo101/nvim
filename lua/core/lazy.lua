@@ -67,7 +67,7 @@ require("lazy").setup({
     },
     {
         "saghen/blink.cmp",
-        dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip" },
+        dependencies = { "rafamadriz/friendly-snippets", "L3MON4D3/LuaSnip", "saghen/blink.lib" },
         build = "cargo build --release",
     },
     {
