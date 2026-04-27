@@ -3,7 +3,8 @@ vim.g.mapleader = " "
 local opts = { noremap = true, silent = true }
 --vim.keymap.set("n", "<leader>fe", "<cmd>Neotree toggle reveal<CR>", opts)
 -- Replace your leader fe mapping
-vim.keymap.set("n", "<leader>fe", function() Snacks.explorer() end, { desc = "Snacks Explorer" })
+--vim.keymap.set("n", "<leader>fe", function() Snacks.explorer() end, { desc = "Snacks Explorer" })
+vim.keymap.set("n", "<leader>fe", "<cmd>Neotree toggle reveal<CR>", opts)
 vim.keymap.set("n", "<leader>h", "<Cmd>leftabove vsplit<Bar>wincmd h<CR>", opts)
 vim.keymap.set("n", "<leader>l", "<Cmd>rightbelow vsplit<Bar>wincmd l<CR>", opts)
 

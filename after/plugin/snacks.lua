@@ -30,7 +30,7 @@ require("snacks").setup({
     statuscolumn = { enabled = false },
     words = { enabled = false },
     explorer = {
-        enabled = true,
+        enabled = false,
         replace_netrw = true,
         trash = true,
     },
