@@ -3,6 +3,8 @@ vim.g.neovide_opacity = 0.7
 vim.g.neovide_window_blurred = true
 vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
 
+require("vim._core.ui2").enable()
+
 -- Terminal colors (match kitty)
 vim.g.terminal_color_0  = "#38383F"
 vim.g.terminal_color_8  = "#ABA8A1"

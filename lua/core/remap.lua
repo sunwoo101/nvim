@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>l", "<Cmd>rightbelow vsplit<Bar>wincmd l<CR>", opts
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
 vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
-vim.keymap.set({"n", "v"}, "<C-j>", "<C-d>", opts)
-vim.keymap.set({"n", "v"}, "<C-k>", "<C-u>", opts)
+vim.keymap.set({ "n", "v" }, "<C-j>", "<C-d>", opts)
+vim.keymap.set({ "n", "v" }, "<C-k>", "<C-u>", opts)
 
 vim.keymap.set("n", "<leader>w", "<cmd>bdelete<CR>", opts)
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
@@ -57,5 +57,6 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP Rename Symbol" })
 
 vim.keymap.set("v", "<leader>y", '"+y<Esc>', opts)
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', opts)
 
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = "LSP Code Action" })
