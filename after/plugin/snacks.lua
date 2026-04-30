@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files() end, { desc = "Find Files" })
+vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true, ignored = true }) end, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 
 require("snacks").setup({
