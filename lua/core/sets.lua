@@ -1,8 +1,4 @@
-# neovide
-vim.g.neovide_opacity = 0.7
-vim.g.neovide_window_blurred = true
-vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
-
+-- Disable press Enter, auto adjust lualine pos when using command, and other UI improvements
 require("vim._core.ui2").enable()
 
 -- Terminal colors (match kitty)
