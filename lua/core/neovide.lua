@@ -2,7 +2,7 @@ vim.g.neovide_opacity = 0.7
 vim.g.neovide_window_blurred = true
 vim.g.neovide_input_macos_option_key_is_meta = "only_left"
 vim.g.neovide_refresh_rate = 300
-vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12"
+vim.o.guifont = "JetBrainsMono Nerd Font Mono:h12:#e-calt"
 
 if vim.g.neovide then
     local map = function(mode, lhs, rhs, desc)
