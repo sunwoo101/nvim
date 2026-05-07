@@ -1,5 +1,13 @@
 require("neo-tree").setup({
     default_component_configs = {
+        diagnostics = {
+            symbols = {
+                error = '󰅚',
+                warn  = '󰀪',
+                info  = '󰋽',
+                hint  = '󰌶',
+            },
+        },
         git_status = {
             symbols = {
                 added     = "",
@@ -81,7 +89,7 @@ require("neo-tree").setup({
             },
             directory = {
                 { "icon" },
-                { "padded_name" },
+                { "padded_name", use_git_status_colors = true },
                 { "diagnostics" },
             },
         },

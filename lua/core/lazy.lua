@@ -86,8 +86,12 @@ require("lazy").setup({
     "windwp/nvim-ts-autotag",
     "tpope/vim-sleuth",
 
+    -- Bracket colourizer
+    "HiPhish/rainbow-delimiters.nvim",
+    "sunwoo101/hlchunk.nvim",
+
     -- Style / UI
-    "petertriho/nvim-scrollbar",
+    { "lewis6991/satellite.nvim", opts = {} },
     "lewis6991/gitsigns.nvim",
     {
         "akinsho/bufferline.nvim",
@@ -110,7 +114,7 @@ require("lazy").setup({
     },
 
     -- Tools
-    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    { 'akinsho/toggleterm.nvim',  version = "*", config = true },
 
     -- Discord RPC
     "andweeb/presence.nvim",

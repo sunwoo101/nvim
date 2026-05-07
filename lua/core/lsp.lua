@@ -8,23 +8,7 @@ vim.diagnostic.config({
     severity_sort = true,
     underline = true,
     update_in_insert = true,
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚',
-            [vim.diagnostic.severity.WARN] = '󰀪',
-            [vim.diagnostic.severity.INFO] = '󰋽',
-            [vim.diagnostic.severity.HINT] = '󰌶',
-        },
-        linehl = {
-            [vim.diagnostic.severity.ERROR] = "DiagnosticLineError",
-        },
-        numhl = {
-            [vim.diagnostic.severity.ERROR] = 'DiagnosticError',
-            [vim.diagnostic.severity.WARN] = 'DiagnosticWarn',
-            [vim.diagnostic.severity.INFO] = 'DiagnosticInfo',
-            [vim.diagnostic.severity.HINT] = 'DiagnosticHint',
-        },
-    },
+    signs = false,
 })
 
 vim.api.nvim_set_hl(0, "DiagnosticLineError", { bg = "#51202A" })

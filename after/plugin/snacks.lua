@@ -1,4 +1,5 @@
-vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true, ignored = true }) end, { desc = "Find Files" })
+vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true, ignored = true }) end,
+    { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 
 require("snacks").setup({
@@ -8,11 +9,11 @@ require("snacks").setup({
     },
     bigfile = { enabled = false },
     dashboard = { enabled = true },
-    indent = { enabled = true },
+    indent = { enabled = false },
+    scope = { enabled = false },
     input = { enabled = false },
     notifier = { enabled = true },
     quickfile = { enabled = false },
-    scope = { enabled = true },
     --[[
     scroll = {
         enabled = true,
