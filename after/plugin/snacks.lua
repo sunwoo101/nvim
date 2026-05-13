@@ -37,6 +37,7 @@ require("snacks").setup({
         trash = true,
     },
     picker = {
+        ui_select = true,
         layout = {
             cycle = false,
         },
@@ -89,3 +90,25 @@ require("snacks").setup({
         },
     },
 })
+
+-- vtsls's getEditsForFileRename (used for import updates) only works on files that
+-- are open in tsserver's buffer. Patch _rename so that any file not already open
+-- gets a hidden buffer + vtsls attachment before workspace/didRenameFiles is sent.
+local orig_rename = Snacks.rename._rename
+Snacks.rename._rename = function(from, to)
+    local ok = orig_rename(from, to)
+    if ok and vim.fn.bufnr(to) < 0 then
+        local buf = vim.fn.bufadd(to)
+        vim.bo[buf].buflisted = false
+        vim.fn.bufload(buf)
+        for _, client in ipairs(vim.lsp.get_clients({ name = "vtsls" })) do
+            vim.lsp.buf_attach_client(buf, client.id)
+        end
+        vim.defer_fn(function()
+            if vim.api.nvim_buf_is_valid(buf) and not vim.bo[buf].buflisted then
+                vim.api.nvim_buf_delete(buf, { force = true })
+            end
+        end, 3000)
+    end
+    return ok
+end
