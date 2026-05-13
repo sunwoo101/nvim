@@ -2,6 +2,7 @@ vim.keymap.set("n", "<leader>ff", function() Snacks.picker.files({ hidden = true
     { desc = "Find Files" })
 vim.keymap.set("n", "<leader>fg", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 
+
 require("snacks").setup({
     image = {
         enabled = true,
@@ -31,11 +32,22 @@ require("snacks").setup({
     statuscolumn = { enabled = false },
     words = { enabled = false },
     explorer = {
-        enabled = false,
+        enabled = true,
         replace_netrw = true,
         trash = true,
     },
     picker = {
+        layout = {
+            cycle = false,
+        },
+        win = {
+            list = {
+                keys = {
+                    ["<C-j>"] = { "list_scroll_down", mode = { "i", "n" } },
+                    ["<C-k>"] = { "list_scroll_up", mode = { "i", "n" } },
+                },
+            },
+        },
         sources = {
             explorer = {
                 finder = "explorer",
