@@ -27,6 +27,21 @@ require("lazy").setup({
             broad_search = false,
             lock_target = false,
             silent = true,
+            extensions = {
+                razor = {
+                    enabled = true,
+                    config = function()
+                        local razor_path = require("roslyn.utils").find_razor_extension_path()
+                        if razor_path == nil then
+                            return { path = nil }
+                        end
+                        -- args removed: 5.8.0+ no longer accepts --razorSourceGenerator / --razorDesignTimePath
+                        return {
+                            path = vim.fs.joinpath(razor_path, "Microsoft.VisualStudioCode.RazorExtension.dll"),
+                        }
+                    end,
+                },
+            },
         }
     },
     'stevearc/conform.nvim',
