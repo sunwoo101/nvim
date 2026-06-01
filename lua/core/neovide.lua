@@ -40,7 +40,14 @@ if vim.g.neovide then
                     if vim.api.nvim_win_is_valid(win) then
                         local cfg = vim.api.nvim_win_get_config(win)
                         if cfg.relative ~= "" then
-                            vim.wo[win].winblend = 100
+                            local ft = vim.bo[vim.api.nvim_win_get_buf(win)].filetype
+                            -- toggleterm: TUI apps (e.g. Claude CLI) hide the terminal
+                            -- cursor and render their own via background-coloured cells.
+                            -- winblend=100 makes those invisible, so toggleterm stays at 0.
+                            -- The window still appears semi-transparent via neovide_opacity.
+                            if ft ~= "toggleterm" then
+                                vim.wo[win].winblend = 100
+                            end
                         end
                     end
                 end
@@ -52,7 +59,7 @@ if vim.g.neovide then
     -- blend=0 on a highlight group overrides the window winblend for that group,
     -- so these backgrounds render at full opacity even inside winblend=100 windows.
     local function fix_blend_overrides()
-        local groups = { "CursorLine", "CursorLineNr", "Visual", "VisualNOS" }
+        local groups = { "CursorLine", "CursorLineNr", "Visual", "VisualNOS", "BlinkCmpMenuSelection", "TermCursor", "TermCursorNC" }
         for _, g in ipairs(groups) do
             local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = g, link = false })
             if ok and hl then
