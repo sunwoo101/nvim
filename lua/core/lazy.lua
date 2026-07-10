@@ -122,7 +122,17 @@ require("lazy").setup({
     { 'akinsho/toggleterm.nvim',  version = "*", config = true },
 
     -- Discord RPC
-    "andweeb/presence.nvim",
+    {
+        "vyfor/cord.nvim",
+        ---@type CordConfig
+        opts = {
+            text = {
+                -- `true` = ignore these buffer types; keep showing the last document
+                terminal = true,     -- toggleterm etc.
+                file_browser = true, -- snacks picker/explorer (incl. terminal hub)
+            },
+        },
+    },
 }, {
     -- optional: performance/lazy-load tweaks
     defaults = { lazy = false },
